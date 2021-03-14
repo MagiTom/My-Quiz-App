@@ -1,140 +1,120 @@
 
 export let questions = [{
-    question: 'What is 2 + 2?',
+    question: 'What is my favourite animal?',
     answers: [{
-            text: '4',
+            text: 'Quinea Pig',
             correct: true
         },
         {
-            text: '22',
+            text: 'Cat',
             correct: false
         },
         {
-            text: '22',
+            text: 'Dog',
             correct: false
         },
         {
-            text: '22',
+            text: 'Rabbit',
             correct: false
         }
     ]
 },
 {
-    question: 'Who is the best YouTuber?',
+    question: 'What is my favourite color?',
     answers: [{
-            text: 'Web Dev Simplified',
+            text: 'Red',
             correct: true
         },
         {
-            text: 'Traversy Media',
-            correct: true
-        },
-        {
-            text: 'Dev Ed',
-            correct: true
-        },
-        {
-            text: 'Fun Fun Function',
-            correct: true
-        }
-    ]
-},
-{
-    question: 'Is web development fun?',
-    answers: [{
-            text: 'Kinda',
+            text: 'Yellow',
             correct: false
         },
         {
-            text: 'YES!!!',
-            correct: true
-        },
-        {
-            text: 'Um no',
+            text: 'Green',
             correct: false
         },
         {
-            text: 'IDK',
+            text: 'Black',
             correct: false
         }
     ]
 },
 {
-    question: 'What is 4 * 2?',
+    question: 'When is my birthday?',
     answers: [{
-            text: '6',
+            text: '15.10.1990',
             correct: false
         },
         {
-            text: '8',
+            text: '15.05.1989',
             correct: true
         },
         {
-            text: '22',
+            text: '11.03.1995',
             correct: false
         },
         {
-            text: '22',
+            text: '12.07.1991',
             correct: false
         }
     ]
 },
 {
-    question: 'What is 4888888 * 2?',
+    question: 'When I got merry?',
     answers: [{
-            text: '6',
+            text: '12.01.2020',
             correct: false
         },
         {
-            text: '8',
+            text: '14.08.2018',
             correct: true
         },
         {
-            text: '22',
+            text: '19.05.2014',
             correct: false
         },
         {
-            text: '22',
+            text: '3.11.2021',
             correct: false
         }
     ]
 },
 {
-    question: 'What is 4555 * 2?',
+    question: 'My the best film?',
     answers: [{
-            text: '6',
+            text: 'Harry Potter',
             correct: false
         },
         {
-            text: '8',
+            text: 'Pirates of the Caribbean',
             correct: true
         },
         {
-            text: '22',
+            text: 'Wonder',
             correct: false
         },
         {
-            text: '22',
+            text: 'Inside Out',
             correct: false
         }
     ]
 },
 {
-    question: 'What is 45999999955 * 2?',
+    question: '',
     answers: [{
-            text: '6',
+            text: '',
             correct: false
         },
         {
-            text: '8',
-            correct: true
-        },
-        {
-            text: '22',
+            text: '',
             correct: false
         },
         {
-            text: '22',
+            text: '',
+            correct: false
+        },
+        {
+            text: '',
             correct: false
         }
     ]

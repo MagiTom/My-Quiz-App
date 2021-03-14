@@ -1,47 +1,64 @@
 import { Ui } from "./ui.js";
 import { questions } from "./questions.js";
 
-let nexPage = 0;
+let nexPage = 1;
 let score = 0;
 let indexQuestion = 0;
-
-console.log(questions);
+let result = false;
+const startBtn = document.querySelector('.start');
+const progress = document.querySelector('.quiz__progress');
 
 function startQuiz() {
-
+ 
+    result = false;
+    indexQuestion = 0;
+    nexPage = 1;
+    score = 0;
     let ui = new Ui(questions[indexQuestion]);
-    ui.renderContent();
+    startBtn.style.display = 'none';
+    progress.style.visibility = 'visible';
+    ui.choices.forEach(choice => {
+        choice.style.display = "block";
+    });
+
+    ui.renderContent(ui);
+    ui.displayProgress(nexPage, questions.length)
+    eventListener(ui)
+}
+
+function eventListener(ui) {
 
     ui.choices.forEach((choice) => {
-        choice.addEventListener('click', function (e) {
-            if (e.target.classList.contains('true')) {
-                score++;
-            }
-            nexPage++;
-            indexQuestion++;
-            
-            console.log(indexQuestion);
-            endQuiz(ui);
-        })
+        choice.addEventListener('click', generateNextPage)
     })
-
 }
 
 
-
-
-
+function generateNextPage(e) {
+    if (e.target.classList.contains('true')) {
+        console.log(e.target)
+        score++;
+    }
+        nexPage++;
+        indexQuestion++;
+        let ui = new Ui(questions[indexQuestion]);
+        ui.displayProgress(nexPage, questions.length)
+        ui.renderContent(ui);
+        endQuiz(ui);
+}
 
 function endQuiz(ui) {
-    if (nexPage === questions.length) {
-        ui.showResult();
-        nexPage = 0;
-        indexQuestion = 0;
-
-    }
+ 
+    if(indexQuestion >= questions.length - 1){
+    progress.style.visibility = 'hidden';
+    ui.choices.forEach(choice => {
+        choice.style.display = "none";
+    });
+    startBtn.style.display = 'block';
+    startBtn.textContent = "try again";
+    ui.displayScore(score);
 }
+  }
 
 
-
-
-document.querySelector('.start').addEventListener('click', startQuiz);
+startBtn.addEventListener('click', startQuiz);

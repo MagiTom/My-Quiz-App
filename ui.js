@@ -5,24 +5,29 @@ export class Ui {
         this.question = question;
         this.answers = question.answers;
         this.choices = [...document.querySelectorAll('.btn')];
+        this.questionContent = document.querySelector('.quiz__question p');
     }
 
     renderContent() {
         for (let i = 0; i < this.choices.length; i++) {
             this.choices[i].textContent = this.answers[i].text;
-            if (this.answers[i].correct === true) {
-                this.choices[i].classList.add('true')
-            }
+            this.choices[i].classList = 'btn';
+            this.choices[i].classList.add(`${this.answers[i].correct}`);
         }
 
-        document.querySelector('.quiz__question p').textContent = this.question.question;
+        this.questionContent.textContent = this.question.question;
     }
-    
 
-    showResult() {
-       this.choices.forEach(choice => {
-           choice.style.display = "none";
-       })
+
+    displayScore(score) {
+        this.questionContent.textContent = `Your Score is ${score}`
+    }
+
+    displayProgress(pageNumber, quiz) {
+        const quizProgress = document.querySelector('.question-number');
+        const quizLength = document.querySelector('.quiz-length');
+        quizProgress.textContent = pageNumber;
+        quizLength.textContent = quiz - 1;
     }
 }
 

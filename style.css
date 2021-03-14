@@ -43,6 +43,7 @@ font-size: 1.5rem;
     width: 50%;
     height: inherit;
     cursor: pointer;
+
 }
 
 .quiz__body > button:hover{
@@ -52,6 +53,7 @@ background-color: rgb(219, 254, 255);
 .quiz__progress{
     margin-top: 1em;
     color: rgb(133, 113, 113);
+ visibility: hidden;
 }
 
 .start{
